@@ -1,0 +1,33 @@
+<div class="card text-center">
+  <div  *ngIf="(moduloSistema$  | async ) as moduloSistema" >
+      <div class="card-header"> Editar<h2>Módulo: {{moduloSistema.descricao | uppercase}} </h2></div>
+      <div class="card-body">
+                       <form [formGroup]="sistemaUpdateForm"  (submit)="save()">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                        <div class="input-group">
+                                            <input formControlName="descricao" 
+                                                   [(ngModel)]="moduloSistema.descricao" 
+                                                   class="form-control" 
+                                                   placeholder="Descrição do Módulo" 
+                                                   /> 
+                                            <div class="input-group-append">
+                                                  <button type="submit" class="btn btn-outline-success" >Alterar </button>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 mt-5">   
+                                          <div class="input-group">          
+                                            <button (click)="goBack()" class="btn btn-info"><< Voltar</button>
+                                          </div>  
+                                        </div>                
+                                    </div>        
+                       </form>
+            </div> <!--card-body-->
+      </div> <!--ngIf-->
+</div><!--card text-center-->
+      
+
+
